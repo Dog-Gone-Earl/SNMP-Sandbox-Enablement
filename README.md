@@ -180,7 +180,8 @@ ddev env reload snmp py3.11-false && ddev env check snmp py3.11-false
 ```
 
 Fortinet-Fortigate Example
-```init_config:
+```
+init_config:
   loader: core
   namespace: COMP-T210RX79FT
   use_device_id_as_hostname: true
