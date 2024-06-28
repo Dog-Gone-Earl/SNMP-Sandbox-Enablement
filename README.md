@@ -1,13 +1,33 @@
-# sandbox/vagrant/agent7/snmp_v1
+## 1. Clone Repo
+```
+git clone https://github.com/Dog-Gone-Earl/SNMP-Sandbox-Enablement.git
+```
 
-## What this VM does
+- This script should work on Vagrant (Ubuntu) or AWS EC2 Instance (Ubuntu).
 
-- Test snmp (v1) functionaity with Agent
+## Folder Structure: 
+```
+snmp-sandbox-enablement (folder)
+   → Vagrantfile (file)
+   → setup.sh (file)
+   → data (folder)
+   → shared (folder)
+```
+- This script should work on Vagrant (Ubuntu) or AWS EC2 Instance (Ubuntu).
 
-## VM type: 
-- Linux Ubuntu
+```
+#!/bin/bash
 
-## Special Instructions
+comm_string=<VALUE>
+echo "Provisioning!"
+sudo apt-get update -y; sudo apt-get upgrade -y; sudo apt-get install -y snmpd snmp
+sudo sed -i '73i rocommunity '$comm_string'' /etc/snmp/snmpd.conf
+sudo sed -i "s/agentaddress  127.0.0.1,[::1]/agentAddress udp:161,udp6:[::1]:161/1" /etc/snmp/snmpd.conf
+sudo service snmpd restart
+```
+
+
+## Checking snmp Configuration
 
 ### 1. Set a `community string` value in the `setup.sh` file:
 ```
