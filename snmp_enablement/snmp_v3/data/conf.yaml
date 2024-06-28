@@ -1,0 +1,13 @@
+init_config:
+    loader: core
+    use_device_id_as_hostname: true
+instances:
+  -
+    ip_address: localhost
+    snmp_version: 3
+    loader: core
+    use_device_id_as_hostname: true
+    authProtocol: SHA
+    privProtocol: AES
+    tags:
+      - minor:jammy
