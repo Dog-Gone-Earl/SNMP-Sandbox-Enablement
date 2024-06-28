@@ -1,48 +1,60 @@
-## 1. Clone Repo
+# 1. Clone Repo
 ```
 git clone https://github.com/Dog-Gone-Earl/SNMP-Sandbox-Enablement.git
 ```
+- These scripts were tested on a Vagrant (Ubuntu) and AWS EC2 Instance (Ubuntu).
 
-- This script should work on Vagrant (Ubuntu) or AWS EC2 Instance (Ubuntu).
+# V1 vs V2 vs V3 Configuration
 
-## Folder Structure: 
+`V1` and `V2` confiugration will use a `community_string`
 ```
-snmp-sandbox-enablement (folder)
-   → Vagrantfile (file)
-   → setup.sh (file)
-   → data (folder)
-   → shared (folder)
+SNMP Version 1 or 2c specific
+  -c COMMUNITY		set the community string
 ```
-- This script should work on Vagrant (Ubuntu) or AWS EC2 Instance (Ubuntu).
-
+- Community string information:
+   - <link>https://www.dnsstuff.com/snmp-community-string</link> 
+`V3` configuration will have more configurations information
 ```
-#!/bin/bash
-
-comm_string=<VALUE>
-echo "Provisioning!"
-sudo apt-get update -y; sudo apt-get upgrade -y; sudo apt-get install -y snmpd snmp
-sudo sed -i '73i rocommunity '$comm_string'' /etc/snmp/snmpd.conf
-sudo sed -i "s/agentaddress  127.0.0.1,[::1]/agentAddress udp:161,udp6:[::1]:161/1" /etc/snmp/snmpd.conf
-sudo service snmpd restart
+SNMP Version 3 specific
+  -a PROTOCOL		set authentication protocol (MD5|SHA)
+  -A PASSPHRASE		set authentication protocol pass phrase
+  -e ENGINE-ID		set security engine ID (e.g. 800000020109840301)
+  -E ENGINE-ID		set context engine ID (e.g. 800000020109840301)
+  -l LEVEL		set security level (noAuthNoPriv|authNoPriv|authPriv)
+  -n CONTEXT		set context name (e.g. bridge1)
+  -u USER-NAME		set security name (e.g. bert)
+  -x PROTOCOL		set privacy protocol (DES|AES)
+  -X PASSPHRASE		set privacy protocol pass phrase
+  -Z BOOTS,TIME		set destination engine boots/time
 ```
 
+- `PROTOCOL`, `PASSPHRASE`, `PROTOCOL`, `PASSPHRASE`, and `USER-NAME` are common configuration seen from tickets.
+- Can get more developer information with command `man snmmpwalk`
 
-## Checking snmp Configuration
+
+## Checking snmp Configuration Locations
 ```
-sudo cat /etc/snmp/snmpd.conf #v1
-sudo cat /usr/share/snmp/snmpd.conf #v3
+sudo cat /etc/snmp/snmpd.conf #V1
+sudo cat /usr/share/snmp/snmpd.conf #V3
 ```
 
 ## Host snmpwalk
+- Information on snmpwalk and snmpget command:
+   - <link>https://www.ionos.com/digitalguide/server/know-how/snmp-tutorial/</link>
+   - Sometimes customer may refer to either command. `snmpwalk` and `snmpget` are among the included solutions for retrieving information from SNMP-enabled devices using simple `GET` requests (`snmpge`t) or multiple `GETNEXT` requests (`snmpwalk`).
+   - GETNEXT
+      - <link>https://net-snmp.sourceforge.io/wiki/index.php/GETNEXT</link>
 ```
-snmpwalk -v 1 -c <VALUE> -ObentU localhost:161 1.3 #v1
+snmpwalk -v 1 -c <VALUE> -ObentU localhost:161 1.3 #V1
 
-snmpwalk -v 3 -a SHA -A $auth_key_string -x AES -X $priv_key_string -l authPriv -u $snmpv3_user localhost:161 #v3
+snmpwalk -v 3 -a SHA -A $auth_key_string -x AES -X $priv_key_string -l authPriv -u $snmpv3_user localhost:161 #V3
 ```
 
 # 2. Install Agent:
+- Install Agent with Sandbox account
 
 ## Agent `snmpwalk`
+   - This command is similar to host `snmpwalk` structure:
 ```
 sudo datadog-agent snmp walk localhost:161 1.3 -C <COMMUNITY_STRING>
 
