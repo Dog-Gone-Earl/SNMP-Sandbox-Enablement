@@ -155,7 +155,7 @@ added the custom profile to the fixture user profiles that we use for tests
 launched ddev (from integrations-core) with 
 ```
 ddev env start snmp py3.11-false
-``
+```
 I updated the config to use the snmpwalk data for the test instance with (ddev must be running) then update the community-string to the name of the snmpwalk file `community_string: <VALUE>`
 
 ```
