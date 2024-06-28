@@ -128,6 +128,8 @@ Example
 Checkpoint MIB
 version: R81.20
 ```
+
+Checkpoint MIB File
 <link>https://support.checkpoint.com/results/sk/sk90470</link>
 
 - Using ddev to generate MIB
@@ -145,14 +147,16 @@ copied the snmpwalk to the snmp tests data
 #PUT THE snmpwalk OUTPUT IN THIS DIRECTORY
 ~/PATH_TO_DDEV/integrations-core/snmp/tests/compose/data 
 
-cp -r <SNMPWALK_OUTPUT> ./PATH_TO_DDEV/integrations-core/snmp/tests/compose/data/<SNMPWALK_FILENAME>
+cp -r <SNMPWALK_OUTPUT> ~/PATH_TO_DDEV/integrations-core/snmp/tests/compose/data/<SNMPWALK_FILENAME>
 ```
 
 added the custom profile to the fixture user profiles that we use for tests
 ```
 ~/PATH_TO_DDEV/integrations-core/snmp/tests/fixtures/user_profiles/<PROFILE_NAME>
 
+```
 launched ddev (from integrations-core) with 
+
 ```
 ddev env start snmp py3.11-false
 ```
@@ -174,7 +178,8 @@ instances:
   port: 1161
 ```
 
-I reloaded with the new config and launched a snmp check 
+I reloaded with the new config and launched a snmp check
+
 ```
 ddev env reload snmp py3.11-false && ddev env check snmp py3.11-false
 ```
