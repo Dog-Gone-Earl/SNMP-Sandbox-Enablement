@@ -13,7 +13,7 @@ sudo apt-get install -y curl
 sudo apt-get install snmpd snmp -y
 
 echo "Installing dd-agent from api_key: ${DD_API_KEY}..."
-DD_API_KEY=79938ecabac1635b8e9015124137cb6f DD_SITE="datadoghq.com"  bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
+DD_API_KEY=<VALUE> DD_SITE="datadoghq.com"  bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
 
 sudo sed -i.yaml "s/# hostname: <HOSTNAME_NAME>/hostname: aws_ec2_snmp/1" /etc/datadog-agent/datadog.yaml
 sudo sed -i.yaml "s/# env: <environment name>/env: aws_ubuntu/1" /etc/datadog-agent/datadog.yaml
