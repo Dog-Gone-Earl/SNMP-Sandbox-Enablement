@@ -174,9 +174,9 @@ ddev meta snmp generate-profile-from-mibs CHECKPOINT-MIB
 
 ## Validate a Profile
 ```
-ddev meta snmp validate-profile -f <FILE_NAME>
+ddev meta snmp validate-profile -f <FILENAME>
 
-ddev meta snmp validate-profile -f <PATH_TO_DDEV>/integrations-core/snmp/tests/fixtures/user_profiles/apc_ups_user.yaml
+ddev meta snmp validate-profile -f /integrations-core/snmp/tests/fixtures/user_profiles/apc_ups_user.yaml
 ```
 ---
 
