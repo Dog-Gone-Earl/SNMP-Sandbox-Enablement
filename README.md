@@ -187,6 +187,9 @@ version: R81.20
 ddev meta snmp generate-profile-from-mibs <MIB_FILE>
 
 ddev meta snmp generate-profile-from-mibs CHECKPOINT-MIB
+
+#Example provided MIB in Integrations-Core
+ddev meta snmp generate-profile-from-mibs ~/integrations-core/snmp/tests/mibs/DUMMY-MIB.txt
 ```
 
 ## Validate a Profile
