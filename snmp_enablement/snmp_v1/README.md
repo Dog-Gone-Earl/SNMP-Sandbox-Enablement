@@ -1,7 +1,7 @@
 ## VM type: 
 - Linux Ubuntu
 
-### 1. Set a `community string` value in the `setup.sh` file:
+### 1. Set a `community string` `<VALUE>` in the `setup.sh` file:
 ```
 comm_string=<VALUE>
 ```
@@ -16,9 +16,13 @@ vagrant ssh;
 ```
 snmpwalk -v 1 -c <COMMUNITY_STRING> -ObentU localhost:161 1.3
 ```
+- Use `<VALUE>` set for `community_string` in `setup.sh` script.
+  
+- Can also use the `netstat -nlpu|grep snmp -v` command to see if `snmp` service listening on `127.0.0.1` aka `localhost`
+
 ### 3. Install Agent:
 
-#### You should now be able to run `agent snmpwalk` comnand to poll OID's:
+- #### You should now be able to run `agent snmpwalk` comnand to poll OID's:
 
 #### Example:
 
