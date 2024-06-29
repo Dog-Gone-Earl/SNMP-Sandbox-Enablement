@@ -145,7 +145,7 @@ metrics:
   - https://community.fortinet.com/t5/Support-Forum/OID-Lists/m-p/30443
 - Datadog `fortinet-fortigate` profile
   - https://github.com/DataDog/integrations-core/blob/master/snmp/datadog_checks/snmp/data/default_profiles/fortinet-fortigate.yaml
-  - Notice how our `profile` wildcards the `sysobecjtid`
+  - Notice how our `profile` wildcards the `sysobjectid`
 ---
 # Using `ddev` with `snmp`
 
