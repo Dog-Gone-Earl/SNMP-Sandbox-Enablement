@@ -54,7 +54,6 @@ sudo datadog-agent snmp walk localhost:161 1.3 -v 3 -a SHA -A $auth_key_string -
 ```
 
 ## 4. Create `snmp` integration configuration `yaml` named `conf.yaml` located at `/etc/datadog-agent/conf.d/snmp.d/`:
-- snmp `yaml` Configuration should reflect your `VALUES` set in `setup.sh` script:
   
 ```
 init_config:
@@ -74,6 +73,7 @@ instances:
     authKey: $auth_key_string
     privKey: $priv_key_string
 ```
+- snmp `yaml` configuration should reflect your `<*_VALUE>` set in `setup.sh` script
 
 ## 5. Restart Agent
 ```
