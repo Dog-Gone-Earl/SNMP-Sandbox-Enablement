@@ -143,7 +143,7 @@ metrics:
 ### Fortinet-Fortigate `Sysobjectid` Example
 - A blog post on fortinet-fortigate devices`sysobjectid` data
   - https://community.fortinet.com/t5/Support-Forum/OID-Lists/m-p/30443
-- Our fortinet-fortigate profile
+- Datadog `fortinet-fortigate` profile
   - https://github.com/DataDog/integrations-core/blob/master/snmp/datadog_checks/snmp/data/default_profiles/fortinet-fortigate.yaml
   - Notice how our `profile` wildcards the `sysobecjtid`
 ---
