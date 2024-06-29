@@ -70,6 +70,12 @@ sudo cat /usr/share/snmp/snmpd.conf #V3
 snmpwalk -v 1 -c <VALUE> -ObentU localhost:161 1.3 #V1
 
 snmpwalk -v 3 -a SHA -A $auth_key_string -x AES -X $priv_key_string -l authPriv -u $snmpv3_user localhost:161 #V3
+
+#Set Environment Variables on host to avoid manually entering values each time:
+
+export auth_key_string=<VALUE>;
+export priv_key_string=<VALUE>;
+export snmpv3_user=<VALUE>
 ```
 
 # 2. Agent Configuration:
