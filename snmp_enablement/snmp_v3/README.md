@@ -3,13 +3,13 @@
 ## VM type: 
 - Linux Ubuntu
 
-## SNMP V3 Configuration:
+## SNMP V3 Configuration Mapping/Security Protocols:
 ```
-auth-protocol string=SHA
-auth-key string=$auth_key_string
-priv-proto string=AES
-priv-key string=$priv_key_string 
-security-level string=authPriv
+auth-protocol=SHA
+auth-key=$auth_key_string
+priv-protocol=AES
+priv-key=$priv_key_string 
+security-level=authPriv
 user=$snmpv3_user
 ```
 
@@ -71,7 +71,7 @@ instances:
     authProtocol: SHA
     privProtocol: AES
     tags:
-      - minor:jammy
+      - minor:<VALUE>
     user: $snmpv3_user
     authKey: $auth_key_string
     privKey: $priv_key_string
