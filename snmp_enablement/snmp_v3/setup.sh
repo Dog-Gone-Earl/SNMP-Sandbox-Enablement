@@ -27,3 +27,5 @@ sudo ufw allow from 127.0.0.1 to any port 161 proto udp comment "Allow SNMP Scan
 
 sudo systemctl start snmpd
 sudo systemctl enable snmpd
+
+echo "run the command: export auth_key_string=$auth_key_string; export priv_key_string=$priv_key_string;export snmpv3_user=$snmpv3_user"
