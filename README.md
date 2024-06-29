@@ -4,7 +4,7 @@ git clone https://github.com/Dog-Gone-Earl/SNMP-Sandbox-Enablement.git
 ```
 - These are sandboxes for `V1` and `V3` options
 - These sandboxes were tested on a Vagrant (Ubuntu) and AWS EC2 Instance (Ubuntu).
-  - If running on Ec2, just copy and paste `setup.sh` script to instance and run with `bash <SCRIPT_FILENAME>`
+  - If running on Ec2, just copy and paste `setup.sh` script to instance and run with `bash <SCRIPT_FILENAME>.sh`
 
 ## V1 vs V2 vs V3 Configuration
 
