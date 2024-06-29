@@ -1,5 +1,3 @@
-# SNMP V3
-
 # VM type: 
 - Linux Ubuntu
 
