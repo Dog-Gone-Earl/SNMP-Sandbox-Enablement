@@ -167,6 +167,8 @@ version: R81.20
 - <link>https://support.checkpoint.com/results/sk/sk90470</link>
 
 ```
+ddev meta snmp generate-profile-from-mibs <FILENAME>
+
 ddev meta snmp generate-profile-from-mibs CHECKPOINT-MIB
 ```
 
