@@ -2,11 +2,13 @@
 ```
 git clone https://github.com/Dog-Gone-Earl/SNMP-Sandbox-Enablement.git
 ```
-- These scripts were tested on a Vagrant (Ubuntu) and AWS EC2 Instance (Ubuntu).
+- These are sandboxes for `V1` and `V3` options
+- These sandboxes were tested on a Vagrant (Ubuntu) and AWS EC2 Instance (Ubuntu).
+  - If running on Ec2, just copy and paste `setup.sh` script to instance and run with `bash`
 
-# V1 vs V2 vs V3 Configuration
+## V1 vs V2 vs V3 Configuration
 
-`V1` and `V2` confiugration will use a `community_string`
+- `V1` and `V2` confiugration will use a `community_string`
 ```
 SNMP Version 1 or 2c specific
   -c COMMUNITY		set the community string
@@ -28,9 +30,8 @@ SNMP Version 3 specific
   -Z BOOTS,TIME		set destination engine boots/time
 ```
 
-- `PROTOCOL`, `PASSPHRASE`, `PROTOCOL`, `PASSPHRASE`, and `USER-NAME` are common configuration seen from tickets.
+- `PROTOCOL`, `PASSPHRASE`, `PROTOCOL`, `PASSPHRASE`, and `USER-NAME` are common configurations seen from tickets.
 - Can get more developer information with command `man snmmpwalk`
-
 
 ## Checking snmp Configuration Locations
 ```
@@ -39,9 +40,9 @@ sudo cat /usr/share/snmp/snmpd.conf #V3
 ```
 
 ## Host snmpwalk
-- Information on snmpwalk and snmpget command:
+- Information on snmpwalk and snmpget commands:
    - <link>https://www.ionos.com/digitalguide/server/know-how/snmp-tutorial/</link>
-   - Sometimes customer may refer to either command. `snmpwalk` and `snmpget` are among the included solutions for retrieving information from SNMP-enabled devices using simple `GET` requests (`snmpge`t) or multiple `GETNEXT` requests (`snmpwalk`).
+   - Sometimes customer may refer to either command. `snmpwalk` and `snmpget` are among the included solutions for retrieving information from SNMP-enabled devices using simple `GET` requests (`snmpget`) or multiple `GETNEXT` requests (`snmpwalk`).
    - GETNEXT
       - <link>https://net-snmp.sourceforge.io/wiki/index.php/GETNEXT</link>
 ```
@@ -50,11 +51,11 @@ snmpwalk -v 1 -c <VALUE> -ObentU localhost:161 1.3 #V1
 snmpwalk -v 3 -a SHA -A $auth_key_string -x AES -X $priv_key_string -l authPriv -u $snmpv3_user localhost:161 #V3
 ```
 
-# 2. Install Agent:
+# 2. Agent Configuration:
 - Install Agent with Sandbox account
 
 ## Agent `snmpwalk`
-   - This command is similar to host `snmpwalk` structure:
+   - This command is similar to host `snmpwalk` command:
 ```
 sudo datadog-agent snmp walk localhost:161 1.3 -C <COMMUNITY_STRING>
 
@@ -63,7 +64,7 @@ sudo datadog-agent snmp walk localhost:161 1.3 -v 3 -a SHA -A $auth_key_string -
 
 ## 3.SNMP Integration Configuration
 
-### V1:
+### `V1`:
 
 ```
 init_config:
@@ -78,7 +79,7 @@ instances:
     community_string: <COMMUNITY_STRING>
 ```
 
-### V3:
+### `V3`:
 ```
 init_config:
     loader: core
@@ -152,7 +153,7 @@ Checkpoint MIB File
 ddev meta snmp generate-profile-from-mibs CHECKPOINT-MIB
 ```
 ---
-# Test Metric Collection
+# Simulate snmp Profile Metrics Collection with `ddev`
 
 copied the snmpwalk to the snmp tests data
 ```
