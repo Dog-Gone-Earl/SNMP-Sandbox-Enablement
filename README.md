@@ -167,14 +167,14 @@ version: R81.20
 - <link>https://support.checkpoint.com/results/sk/sk90470</link>
 
 ```
-ddev meta snmp generate-profile-from-mibs <FILENAME>
+ddev meta snmp generate-profile-from-mibs <MIB_FILE>
 
 ddev meta snmp generate-profile-from-mibs CHECKPOINT-MIB
 ```
 
 ## Validate a Profile
 ```
-ddev meta snmp validate-profile -f <FILENAME>
+ddev meta snmp validate-profile -f <PROFILE_FILE>
 
 ddev meta snmp validate-profile -f ./integrations-core/snmp/tests/fixtures/user_profiles/apc_ups_user.yaml
 ```
