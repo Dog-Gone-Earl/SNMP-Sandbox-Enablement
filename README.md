@@ -121,10 +121,13 @@ metrics:
 ```
 - Devices under same manufacturer/model tend to have same beginning `Sysobjectid` value
 
-### Sysobjectid Fortinet-Fortigate Example
-- https://community.fortinet.com/t5/Support-Forum/OID-Lists/m-p/30443
-- https://github.com/DataDog/integrations-core/blob/master/snmp/datadog_checks/snmp/data/default_profiles/fortinet-fortigate.yaml
-
+### Fortinet-Fortigate `Sysobjectid` Example
+- A blog post on fortinet-fortigate devices`sysobjectid` data
+  - https://community.fortinet.com/t5/Support-Forum/OID-Lists/m-p/30443
+- Our fortinet-fortigate profile
+  - https://github.com/DataDog/integrations-core/blob/master/snmp/datadog_checks/snmp/data/default_profiles/fortinet-fortigate.yaml
+  - Notice how are our profile wildcards the `sysobecjtid`
+---
 # Using `ddev` with `snmp`
 
 ## Building a Profile
