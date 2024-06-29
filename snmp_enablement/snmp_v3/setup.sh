@@ -1,8 +1,8 @@
 #!/bin/bash
 
-auth_key_string=ddauth_2222
-priv_key_string=ddpriv_2222
-snmpv3_user=dduser_2222
+auth_key_string=<VALUE>
+priv_key_string=<VALUE>
+snmpv3_user=<VALUE>
 
 echo "Provisioning!"
 echo ""
