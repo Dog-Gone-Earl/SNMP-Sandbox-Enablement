@@ -97,12 +97,14 @@ instances:
     privKey: $priv_key_string
 ```
 
+- Restart Agent with `sudo service datadog-agent restart`
 - SNMP data should begin populating in UI
 
 ---
 # Build Custom Profile
 
-- <link>https://github.com/Dog-Gone-Earl/Agent-Spec-Sandboxes/blob/main/SNMP/snmp_v1_profile/README.md</link>
+- Since already running on sandbox, we will reference another `repo` for this implemenation:
+  - <link>https://github.com/Dog-Gone-Earl/Agent-Spec-Sandboxes/blob/main/SNMP/snmp_v1_profile/README.md</link>
 
 ### The `Sysobjectid` and `metrics` definition are stated as `required` with building a profile. From our documentation on building profiles:
 - <link>https://datadoghq.dev/integrations-core/tutorials/snmp/profile-format/</link>
@@ -186,7 +188,7 @@ ddev meta snmp validate-profile -f <PATH_TO_DDEV>/integrations-core/snmp/tests/f
 - <link>https://docs.datadoghq.com/network_monitoring/devices/guide/build-ndm-profile/</link>
 - <link>https://datadoghq.dev/integrations-core/tutorials/snmp/profile-format/</link>
 
-## Using ddev to generate MIB
+## Using ddev to generate a `profile`
 - <link>https://docs.datadoghq.com/developers/integrations/python/?tab=macos</link>
 - <link>https://datadoghq.dev/integrations-core/tutorials/snmp/profiles/</link>
 - <link>https://datadoghq.atlassian.net/wiki/spaces/~70121cdee4dd346db4f04b0f898148e69bd67/pages/3256352987/Create+NDM+Polling+Profile+Steps</link>
