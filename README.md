@@ -51,7 +51,7 @@ SNMP Version 3 specific
   -Z BOOTS,TIME		set destination engine boots/time
 ```
 
-- `PROTOCOL`, `PASSPHRASE`, `PROTOCOL`, `PASSPHRASE`, and `USER-NAME` are common configurations seen from tickets.
+- `PROTOCOL(authentication)`, `PASSPHRASE(authentication)`, `PROTOCOL(privacy)`, `PASSPHRASE(privacy)`, and `USER-NAME` are common configurations seen from tickets.
 - Can get more developer information with command `man snmmpwalk`
 
 ## Checking `snmp` Configuration Locations
