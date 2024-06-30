@@ -24,6 +24,7 @@ snmpv3_user=<VAlUE>
 
 ```
 vagrant up
+vagrant ssh
 ```
 - If running on `EC2`, just copy and paste `setup.sh` script to instance and run with `bash <SCRIPT_FILENAME>.sh`
 
