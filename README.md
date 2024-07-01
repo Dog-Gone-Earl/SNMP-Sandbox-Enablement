@@ -216,7 +216,7 @@ ddev meta snmp validate-profile -f ./integrations-core/snmp/tests/fixtures/user_
 ```
 ---
 ## `snmp` TEE Deep Dive (recommended)
-- https://drive.google.com/drive/folders/1R6gfu8E6ZXCIyHU-vJHwcv3hv5TyzuEw
+- https://drive.google.com/drive/folders/1TK1NL1CQQIVAw1x5eX2LcwCehFy_WKF-
 ## `snmp` Troubleshooting:
 - <link>https://datadoghq.atlassian.net/wiki/spaces/TS/pages/341017363/SNMP+101</link>
 - <link>https://datadoghq.atlassian.net/wiki/spaces/TS/pages/2409398887/NDM+Field+Expedient+Troubleshooting+from+DD+agent+perspective</link>
