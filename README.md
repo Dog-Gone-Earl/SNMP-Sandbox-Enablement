@@ -62,11 +62,16 @@ sudo cat /usr/share/snmp/snmpd.conf #V3
 ```
 
 ## Host snmpwalk
-- Information on snmpwalk and snmpget commands:
-   - <link>https://www.ionos.com/digitalguide/server/know-how/snmp-tutorial/</link>
-   - Sometimes customer may refer to either command. `snmpwalk` and `snmpget` are among the included solutions for retrieving information from SNMP-enabled devices using simple `GET` requests (`snmpget`) or multiple `GETNEXT` requests (`snmpwalk`).
-   - GETNEXT
-      - <link>https://net-snmp.sourceforge.io/wiki/index.php/GETNEXT</link>
+- Background
+  - Information on `snmpwalk` and `snmpget` commands:
+     - <link>https://www.ionos.com/digitalguide/server/know-how/snmp-tutorial/</link>
+     - Sometimes customer may refer to either command. `snmpwalk` and `snmpget` are among the included solutions for retrieving information from SNMP-enabled devices using simple `GET` requests (`snmpget`) or multiple `GETNEXT` requests (`snmpwalk`).
+     - GETNEXT
+        - <link>https://net-snmp.sourceforge.io/wiki/index.php/GETNEXT</link>
+  - `OID` (Object Identifier) and `MIB` (Management Information Base)
+    - "An object is simply something that we can gather information about on a network device"
+    - "A MIB is like a translator that helps a Management Station to understand SNMP responses obtained from your network devices"
+      - Reference: https://www.networkmanagementsoftware.com/snmp-tutorial-part-2-rounding-out-the-basics/ 
 ```
 snmpwalk -v 1 -c <VALUE> -ObentU localhost:161 1.3 #V1
 
