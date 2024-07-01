@@ -9,7 +9,7 @@ echo ""
 
 echo "apt-get updating"
 sudo apt-get update -y
-sudo apt-get upgrade -y
+#sudo apt-get upgrade -y
 echo "install curl if not there..."
 sudo apt-get install -y curl
 
