@@ -64,8 +64,8 @@ sudo cat /usr/share/snmp/snmpd.conf #V3
 ## Host snmpwalk
 - Background
   - Information on `snmpwalk` and `snmpget` commands:
-     - <link>https://www.ionos.com/digitalguide/server/know-how/snmp-tutorial/</link>
-     - Sometimes customer may refer to either command. `snmpwalk` and `snmpget` are among the included solutions for retrieving information from SNMP-enabled devices using simple `GET` requests (`snmpget`) or multiple `GETNEXT` requests (`snmpwalk`).
+     - Sometimes customer may refer to either command. "`snmpwalk` and `snmpget` are among the included solutions for retrieving information from SNMP-enabled devices using simple `GET` requests (`snmpget`) or multiple `GETNEXT` requests (`snmpwalk`)".
+       - Reference: <link>https://www.ionos.com/digitalguide/server/know-how/snmp-tutorial/</link> 
      - GETNEXT
         - <link>https://net-snmp.sourceforge.io/wiki/index.php/GETNEXT</link>
   - `OID` (Object Identifier) and `MIB` (Management Information Base)
